@@ -7,18 +7,20 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 const IndexPage = ({ data }: PageProps<Queries.StickersQuery>) => {
 	return (
 		<Layout title="Welcome to DevStickers ⭐️">
-			{data.allContentfulStickerPack.nodes.map((stickers) => (
-				<article>
-					<GatsbyImage
-						image={getImage(stickers.preview?.gatsbyImageData!)!}
-						alt={stickers.name!}
-					/>
-					<Link to={`/products/${stickers.id}`}>
-						<h2>{stickers.name}</h2>
-						<h4>${stickers.price}</h4>
-					</Link>
-				</article>
-			))}
+			<div className="grid">
+				{data.allContentfulStickerPack.nodes.map((stickers) => (
+					<article>
+						<GatsbyImage
+							image={getImage(stickers.preview?.gatsbyImageData!)!}
+							alt={stickers.name!}
+						/>
+						<Link to={`/products/${stickers.id}`}>
+							<h2>{stickers.name}</h2>
+							<h4>${stickers.price}</h4>
+						</Link>
+					</article>
+				))}
+			</div>
 		</Layout>
 	)
 }
