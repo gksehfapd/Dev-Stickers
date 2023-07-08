@@ -1,49 +1,28 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal TypeScript Starter
-</h1>
+# Dev-Stickers
 
-## 🚀 Quick start
+Gatsby를 사용하여 작업해본 Dev-Stickers 페이지 입니다.
 
-1.  **Create a Gatsby site.**
+Contentful을 통해 Stickers를 업로드 및 업데이트 할 수 있으며, Netflify를 통해 배포되었습니다.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+## 프로젝트 구조
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
-
-2.  **Start developing.**
-
-    Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.tsx` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Netlify)
-
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
-
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+```
+src
+├── components/*
+│   └── layout.tsx    # header
+│   └── Seo.tsx       # title
+│
+├── pages/
+│   ├── blog/*
+│   │   └── {mdx.frontmatter__slug}.tsx       # src폴더 밖 blog-posts 폴더의 mdx 파일 내용을 불러옴
+│   │   └── index.tsx                         # blog Layout
+│   ├── products/*
+│   │   └── {contentfulStickerPack.id}.tsx    # contentful에 업로드된 데이터(스티커)를 불러옴 / 이름 가격 미리보기 등
+│   │
+│   └── 404.tsx         # 404 페이지
+│   └── about-us.tsx    # about-us 페이지
+│   └── index.tsx       # 메인 컴포넌트
+│
+├── gatsby-types.d.ts   # Graphql을 통해 얻은 data의 types
+└── style.css           # PicoCSS
+```
