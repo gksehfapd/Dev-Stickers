@@ -2,7 +2,9 @@
 
 Gatsby를 사용하여 작업해본 Dev-Stickers 페이지 입니다.
 
-Contentful을 통해 Stickers를 업로드 및 업데이트 할 수 있으며, Netflify를 통해 배포되었습니다.
+Contentful을 통해 Stickers를 업로드 및 업데이트 할 수 있으며, Netlify를 통해 배포되었습니다.
+
+[netlify.app 바로가기↗](https://main--ehfapdstickers.netlify.app/)
 
 ## 프로젝트 구조
 
